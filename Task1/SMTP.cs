@@ -48,7 +48,7 @@ namespace TaskSMTP
 
         public static string Toaddress()
         {
-            return "sureshkumarduraisamy@anaiyaantechnologies.com";
+            return "sureshkumar.duraisamy@anaiyaantechnologies.com";
         }
     }
 }

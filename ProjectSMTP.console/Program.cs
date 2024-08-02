@@ -10,13 +10,13 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            ReadandWrite data = new ReadandWrite();
-            data.File();
+           // ReadandWrite data = new ReadandWrite();
+           // data.File();
 
 
 
-            //SMTP obj = new SMTP();
-            //obj.Send();
+            SMTP obj = new SMTP();
+            obj.Send();
         }
 
     }
