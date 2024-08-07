@@ -16,6 +16,7 @@ namespace Tasks
 
 
             SMTP obj = new SMTP();
+            obj.FileLog();
             obj.Send();
         }
 

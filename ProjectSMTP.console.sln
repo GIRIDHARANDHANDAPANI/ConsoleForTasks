@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasks", "ProjectSMTP.console\Tasks.csproj", "{B3B44D53-CF8E-4172-988D-985EDBAE211B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSMTP", "Task1\TaskSMTP.csproj", "{9B7DAEC3-E47A-43CB-873D-FB7E4339902F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSMTP", "Task1\TaskSMTP.csproj", "{9B7DAEC3-E47A-43CB-873D-FB7E4339902F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskReadandWrite", "TaskReadandWrite\TaskReadandWrite.csproj", "{5F05A68C-D5B4-45C6-9051-81A90ECE6B04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskReadandWrite", "TaskReadandWrite\TaskReadandWrite.csproj", "{5F05A68C-D5B4-45C6-9051-81A90ECE6B04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read Date From JSON File", "Read Date From JSON File\Read Date From JSON File.csproj", "{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5F05A68C-D5B4-45C6-9051-81A90ECE6B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F05A68C-D5B4-45C6-9051-81A90ECE6B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F05A68C-D5B4-45C6-9051-81A90ECE6B04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

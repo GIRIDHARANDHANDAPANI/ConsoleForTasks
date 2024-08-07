@@ -1,15 +1,34 @@
 ﻿using System;
 using System.Net;
 using System.Net.Mail;
+using System.IO;
 namespace TaskSMTP
 {
     public class SMTP
     {
+        public void FileLog()
+        {
+            string file = $"File_{DateTime.Now.ToString("yyyy-mm-dd")}.txt";
+            try
+            {
+                Send();
+                StreamWriter sw = new StreamWriter($"D:{file}.txt",false);
+
+                sw.WriteLine($"Sucessfully sent Mail in {DateTime.Now.ToString("yyyy-mm-dd")}");
+                sw.Close();
+            }
+            catch(Exception e)
+            {
+                StreamWriter sw1 = new StreamWriter($"D:{file}.txt",false);
+                sw1.WriteLine(e.StackTrace);
+                sw1.Close();
+            }
+        }
         public void Send()
         {
             Console.WriteLine("Hello World!");
             SendEmail(GetUserName(), GetPassword());
-            Console.ReadLine();
+            
         }
         public static void SendEmail(string fromaddress, string password)
         {
