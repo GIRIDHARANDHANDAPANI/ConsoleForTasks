@@ -6,8 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Read Date From JSON File\Read Date From JSON File.csproj" />
     <ProjectReference Include="..\Task1\TaskSMTP.csproj" />
     <ProjectReference Include="..\TaskReadandWrite\TaskReadandWrite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
