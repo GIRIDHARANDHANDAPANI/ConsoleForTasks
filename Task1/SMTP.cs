@@ -1,36 +1,49 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace TaskSMTP
 {
     public class SMTP
     {
+        private readonly IConfiguration configuration;
+
+        public SMTP(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
         public void FileLog()
         {
-            string file = $"File_{DateTime.Now.ToString("yyyy-mm-dd")}.txt";
+            string file = $"File_{DateTime.Now.ToString("yyyy-MM-dd")}.txt";
             try
             {
                 Send();
-                StreamWriter sw = new StreamWriter($"D:{file}.txt",false);
+                StreamWriter sw = new StreamWriter($"D:{file}.txt", false);
 
-                sw.WriteLine($"Sucessfully sent Mail in {DateTime.Now.ToString("yyyy-mm-dd")}");
+                sw.WriteLine($"Successfully sent Mail in{DateTime.Now.ToString("yyyy-MM-dd")}");
                 sw.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                StreamWriter sw1 = new StreamWriter($"D:{file}.txt",false);
+                StreamWriter sw1 = new StreamWriter($"D:{file}.txt", false);
                 sw1.WriteLine(e.StackTrace);
                 sw1.Close();
             }
         }
         public void Send()
         {
-            Console.WriteLine("Hello World!");
             SendEmail(GetUserName(), GetPassword());
-            
+            Console.ReadLine();
         }
-        public static void SendEmail(string fromaddress, string password)
+
+
+        public void SendEmail(string fromAddress, string password)
         {
             using SmtpClient email = new SmtpClient
             {
@@ -39,35 +52,42 @@ namespace TaskSMTP
                 EnableSsl = true,
                 Host = "smtp.gmail.com",
                 Port = 587,
-                Credentials = new NetworkCredential(fromaddress, password)
+                Credentials = new NetworkCredential(fromAddress,password)
 
             };
-            string subject = "youtube video"; string body = $"this is the main email sent@{DateTime.UtcNow:F}";
+
+            string subject = "Hii Sir";
+            string body = "$ obj.File(); @{DateTime.UtcNow:F}";
+
 
             try
             {
-                Console.WriteLine("sending email ************");
-                email.Send(fromaddress, Toaddress(), subject, body);
-                Console.WriteLine("email sent ************");
+                Console.WriteLine("sending email ");
+                email.Send(fromAddress, ToAddress(), subject, body);
+                Console.WriteLine("email sent ");
             }
             catch (SmtpException e)
             {
-
                 Console.WriteLine(e);
             }
+
         }
-        public static string GetUserName()
+        public string GetUserName()
         {
-            return "giridharandhandapani@gmail.com";
+            var dataFromJsonFile = configuration.GetSection("From").Value;
+            return dataFromJsonFile;
         }
         public static string GetPassword()
         {
-            return "utwdijnmhemvzbfh";
+            return "puirrtxnvxenkimu";
         }
 
-        public static string Toaddress()
+        public string ToAddress()
         {
-            return "sureshkumar.duraisamy@anaiyaantechnologies.com";
+            var dataFromJsonFile1 = configuration.GetSection("To").Value;
+
+            return dataFromJsonFile1;
+
         }
     }
 }
