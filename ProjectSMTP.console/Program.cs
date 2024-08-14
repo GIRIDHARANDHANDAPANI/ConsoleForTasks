@@ -7,6 +7,8 @@ using Read_Date_From_JSON_File;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using Microsoft.Extensions.DependencyInjection;
+using ReadWeathercastDatafromJSON;
+using Newtonsoft.Json;
 
 namespace Tasks
 {
@@ -14,19 +16,21 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            
-            var serviceCollection = new ServiceCollection();
+            JsonRead data = new JsonRead();
+            data.Climate();
 
-            IConfiguration configuration;
-            configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
-                .AddJsonFile("appsettings.json")
-                .Build();
+            //var serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddSingleton<IConfiguration>(configuration);
+            //IConfiguration configuration;
+            //configuration = new ConfigurationBuilder()
+            //  .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
+            //.AddJsonFile("appsettings.json")
+            //.Build();
 
-            SMTP obj = new SMTP(configuration);
-            obj.Send();
+            //serviceCollection.AddSingleton<IConfiguration>(configuration);
+
+            // SMTP obj = new SMTP(configuration);
+            // obj.Send();
 
 
 

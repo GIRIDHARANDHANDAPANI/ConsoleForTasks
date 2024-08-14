@@ -10,10 +10,12 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Read Date From JSON File\Read Date From JSON File.csproj" />
+    <ProjectReference Include="..\ReadWeathercastDatafromJSON\ReadWeathercastDatafromJSON.csproj" />
     <ProjectReference Include="..\Task1\TaskSMTP.csproj" />
     <ProjectReference Include="..\TaskReadandWrite\TaskReadandWrite.csproj" />
   </ItemGroup>

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSMTP", "Task1\TaskSMTP.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskReadandWrite", "TaskReadandWrite\TaskReadandWrite.csproj", "{5F05A68C-D5B4-45C6-9051-81A90ECE6B04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read Date From JSON File", "Read Date From JSON File\Read Date From JSON File.csproj", "{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Read Date From JSON File", "Read Date From JSON File\Read Date From JSON File.csproj", "{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadWeathercastDatafromJSON", "ReadWeathercastDatafromJSON\ReadWeathercastDatafromJSON.csproj", "{9B57E683-BC29-463B-AF51-E7C0C3DD77E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8397B94-81F4-4083-B4C8-7A3DD3A4B844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B57E683-BC29-463B-AF51-E7C0C3DD77E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B57E683-BC29-463B-AF51-E7C0C3DD77E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B57E683-BC29-463B-AF51-E7C0C3DD77E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B57E683-BC29-463B-AF51-E7C0C3DD77E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
