@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using ReadWeathercastDatafromJSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,11 +20,32 @@ namespace TaskSMTP
         {
             this.configuration = configuration;
         }
+        string body = $"This is Main Email @{DateTime.UtcNow:F}";
+        public void BodyWriter()
+        {
+            try
+            {
+                string Filepath= "C:\\Users\\TEC BUDDY\\Downloads\\WeatherForecast-Result.json";
+                string Json = File.ReadAllText(Filepath);
+                List<WeatherForecast> Result = JsonConvert.DeserializeObject<List<WeatherForecast>>(Json);
+                foreach (var source in Result)
+                {
+                   body+=$"date:{source.Date},summary:{source.Summary},temperatureC:{source.TemperatureC},temperatureF:{source.TemperatureF}";
+                }
+
+            }
+            catch(Exception e)
+            {
+                body += e;
+
+            }
+        }
         public void FileLog()
         {
             string file = $"File_{DateTime.Now.ToString("yyyy-MM-dd")}.txt";
             try
             {
+                BodyWriter();
                 Send();
                 StreamWriter sw = new StreamWriter($"D:{file}.txt", false);
 
@@ -56,12 +79,13 @@ namespace TaskSMTP
 
             };
 
-            string subject = "Hii Sir";
-            string body = "$ obj.File(); @{DateTime.UtcNow:F}";
+            string subject = "Weather Forecast";
+           // string body = "$ obj.File(); @{DateTime.UtcNow:F}";
 
 
             try
             {
+                Console.WriteLine($"{fromAddress},{ToAddress()}{subject}{body}");
                 Console.WriteLine("sending email ");
                 email.Send(fromAddress, ToAddress(), subject, body);
                 Console.WriteLine("email sent ");

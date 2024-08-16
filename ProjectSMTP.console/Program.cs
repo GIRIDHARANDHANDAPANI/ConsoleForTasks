@@ -16,21 +16,21 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            JsonRead data = new JsonRead();
-            data.Climate();
+            //JsonRead data = new JsonRead();
+            //data.Climate();
 
-            //var serviceCollection = new ServiceCollection();
+            var serviceCollection = new ServiceCollection();
 
-            //IConfiguration configuration;
-            //configuration = new ConfigurationBuilder()
-            //  .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
-            //.AddJsonFile("appsettings.json")
-            //.Build();
+            IConfiguration configuration;
+            configuration = new ConfigurationBuilder()
+              .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
+            .AddJsonFile("appsettings.json")
+            .Build();
 
             //serviceCollection.AddSingleton<IConfiguration>(configuration);
 
-            // SMTP obj = new SMTP(configuration);
-            // obj.Send();
+             SMTP obj = new SMTP(configuration);
+             obj.FileLog();
 
 
 
